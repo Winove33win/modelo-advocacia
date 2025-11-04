@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const footerLinks = [
   { label: "Política de Privacidade", href: "#" },
   { label: "Termos de Uso", href: "#" },
@@ -22,9 +20,9 @@ export function Footer() {
         </div>
         <div className="flex flex-col items-start gap-4 text-sm text-muted sm:flex-row sm:items-center">
           {footerLinks.map((link) => (
-            <Link key={link.label} href={link.href} className="hover:text-white">
+            <a key={link.label} href={link.href} className="hover:text-white">
               {link.label}
-            </Link>
+            </a>
           ))}
         </div>
         <p className="text-xs text-muted/70">© {new Date().getFullYear()} Seu Escritório. Todos os direitos reservados.</p>

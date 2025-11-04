@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --color-bg: #0C1B2A;
-    --color-surface: #111F2F;
-    --color-text: #E6EAF0;
-    --color-muted: #9AA8B5;
-    --color-brand: #E0B14C;
+    --color-bg: 12 27 42;
+    --color-surface: 17 31 47;
+    --color-text: 230 234 240;
+    --color-muted: 154 168 181;
+    --color-brand: 224 177 76;
   }
 
   html {
@@ -19,7 +19,7 @@
     @apply bg-bg text-text font-sans antialiased;
     background-image: radial-gradient(circle at top, rgba(224, 177, 76, 0.08), transparent 55%),
       radial-gradient(circle at bottom, rgba(17, 31, 47, 0.7), transparent 50%);
-    background-color: var(--color-bg);
+    background-color: rgb(var(--color-bg));
   }
 
   a {

@@ -13,9 +13,11 @@ const contactSchema = z.object({
     .min(10, "Informe um telefone com DDD.")
     .regex(/^[0-9()+\s-]+$/, "Use apenas números e símbolos válidos."),
   message: z.string().min(20, "Compartilhe detalhes do seu caso."),
-  consent: z.literal(true, {
-    errorMap: () => ({ message: "É necessário autorizar o uso dos dados conforme a LGPD." }),
-  }),
+  consent: z
+    .boolean()
+    .refine((value) => value, {
+      message: "É necessário autorizar o uso dos dados conforme a LGPD.",
+    }),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
