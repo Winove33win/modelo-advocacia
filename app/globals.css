@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #0C1B2A;
+    --color-surface: #111F2F;
+    --color-text: #E6EAF0;
+    --color-muted: #9AA8B5;
+    --color-brand: #E0B14C;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+    background-image: radial-gradient(circle at top, rgba(224, 177, 76, 0.08), transparent 55%),
+      radial-gradient(circle at bottom, rgba(17, 31, 47, 0.7), transparent 50%);
+    background-color: var(--color-bg);
+  }
+
+  a {
+    @apply text-brand transition-colors duration-200;
+  }
+
+  a:hover,
+  a:focus-visible {
+    @apply text-text;
+  }
+
+  ::selection {
+    background: rgba(224, 177, 76, 0.35);
+    color: #0C1B2A;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand text-bg shadow-glow hover:bg-[#f0c263] focus-visible:outline-brand;
+  }
+
+  .btn-outline {
+    @apply btn border border-brand text-brand hover:bg-brand/10 focus-visible:outline-brand;
+  }
+
+  .card-surface {
+    @apply rounded-3xl border border-white/5 bg-surface/80 backdrop-blur-lg shadow-[0_20px_40px_rgba(7,16,26,0.45)];
+  }
+
+  .section-title {
+    @apply font-serif text-3xl font-semibold text-white sm:text-4xl;
+  }
+
+  .section-subtitle {
+    @apply mt-3 max-w-2xl text-base text-muted;
+  }
+}
