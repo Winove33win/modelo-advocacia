@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
@@ -18,27 +17,27 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-bg/90 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
-        <Link href="#" className="text-lg font-semibold uppercase tracking-[0.2em] text-brand">
+        <a href="#" className="text-lg font-semibold uppercase tracking-[0.2em] text-brand">
           Seu Escritório
-        </Link>
+        </a>
         <nav className="hidden items-center gap-10 md:flex" aria-label="Menu principal">
           {links.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-muted transition-colors hover:text-text focus-visible:text-text"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <Link href="#contato" className="btn-outline">
+          <a href="#contato" className="btn-outline">
             Fale Conosco
-          </Link>
-          <Link href="#contato" className="btn-primary">
+          </a>
+          <a href="#contato" className="btn-primary">
             Agendar Consulta
-          </Link>
+          </a>
         </div>
         <button
           type="button"
@@ -59,22 +58,22 @@ export function Navbar() {
       >
         <nav className="space-y-4 px-6 py-6" aria-label="Menu móvel">
           {links.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               className="block text-base font-medium text-muted transition-colors hover:text-text"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
           <div className="mt-6 flex flex-col gap-3">
-            <Link href="#contato" className="btn-outline w-full text-center">
+            <a href="#contato" className="btn-outline w-full text-center">
               Fale Conosco
-            </Link>
-            <Link href="#contato" className="btn-primary w-full text-center">
+            </a>
+            <a href="#contato" className="btn-primary w-full text-center">
               Agendar Consulta
-            </Link>
+            </a>
           </div>
         </nav>
       </div>
